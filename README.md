@@ -27,4 +27,4 @@ getSpec(config, (err, spec) => {
 
 ```
 
-[sigv4][http://docs.aws.amazon.com/general/latest/gr/sigv4_signing.html]
+[sigv4]: http://docs.aws.amazon.com/general/latest/gr/sigv4_signing.html
