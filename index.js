@@ -1,12 +1,9 @@
 // implements 'Signing AWS Requests with Signature Version 4'
 // @ http://docs.aws.amazon.com/general/latest/gr/sigv4_signing.html
+const strftime = require('strftime')
+const crypto = require('crypto')
 
 module.exports = function (config, callback) {
-  // TEMPORARY !
-    const fs = require('fs')
-    const ssp = JSON.parse(fs.readFileSync('./ssp.json').toString())
-    return callback(null, ssp)
-
   https.get(getRequestOptions(config), res => {
     let str = ''
     res.on('error', err => callback(err))
@@ -16,9 +13,6 @@ module.exports = function (config, callback) {
 }
 
 function getRequestOptions (config) {
-  const strftime = require('strftime')
-
-  const crypto = require('crypto')
   const hash = msg => crypto.createHash('sha256').update(msg).digest('hex')
   const sign = (secret, msg, hex) => {
     const hash = crypto.createHmac('sha256', secret).update(msg)
