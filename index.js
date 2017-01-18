@@ -8,9 +8,15 @@ module.exports = function (config, callback) {
   const options = getRequestOptions(config)
 
   https.get(options, res => {
+    let str = ''
+
     res.on('data', data => {
       if (res.statusCode === 403) return callback(JSON.parse(data.toString()))
-      callback(null, data.toString())
+      str += data.toString()
+    })
+
+    res.on('end', () => {
+      callback(null, str)
     })
   }).on('error', err => callback(err))
 }
