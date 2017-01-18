@@ -1,0 +1,22 @@
+{
+  "name": "apigateway-export",
+  "version": "1.0.0",
+  "description": "export a (json) Swagger definition file from AWS API Gateway",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kareniel/apigateway-export.git"
+  },
+  "keywords": [
+    "aws"
+  ],
+  "author": "kareniel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kareniel/apigateway-export/issues"
+  },
+  "homepage": "https://github.com/kareniel/apigateway-export#readme"
+}
